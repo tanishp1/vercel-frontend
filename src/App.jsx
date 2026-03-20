@@ -67,7 +67,7 @@ function App() {
 // login form data to the console from debugging 
       console.log(data, "Form submitted");
 // sending a post to backend  api and create new itema
-      const apiResponse = await axios.post("http://localhost:9090/api/create-iteam", data)
+      const apiResponse = await axios.post("https://vercel-backend-zfom.vercel.app/api/create-iteam", data)
       // login success message when request is successful // login error if request fail 
         .then(console.log("yes")).catch((error) => console.log(error))
 //  login full api response to console
@@ -103,7 +103,7 @@ function App() {
   const getAllIteamData = async () => {
     try {
 
-      const apiResponse = await fetch("http://localhost:9090/api/get-all-iteam")
+      const apiResponse = await fetch("https://vercel-backend-zfom.vercel.app/api/get-all-iteam")
       // convert the api response to json format 
       const responseData = await apiResponse.json()
       // storting fetch iteam array into the iteamdata state
@@ -144,7 +144,7 @@ function App() {
     try {
       console.log(id,"_id===>")
      
-      const apiResponse = await axios.delete(`http://localhost:9090/api/delete-iteam/${id}` )
+      const apiResponse = await axios.delete(`https://vercel-backend-zfom.vercel.app/api/delete-iteam/${id}` )
 
       setShow(false)
       console.log(apiResponse)
